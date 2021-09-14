@@ -75,4 +75,48 @@ ReactDOM.render(
 /* Estado e Ciclo de Vida */
 
 
+class Clock extends React.Component {
+  constructor(props) { // Construtor sempre deve receber props
+    super(props)
+    this.state = { // Inicializamos o atributo state da classe
+      date: new Date()
+    }
+  }
 
+  componentDidMount() { // Chamado assim que o componente é renderizado na DOM
+    this.timerID = setInterval(() => {
+      this.tick(),
+      1000
+    })
+  }
+
+  componentWillUnmount() { // Chamado logo antes do componente ser removido da DOM
+    clearInterval(this.timerID)
+  }
+
+  tick() { // Usamos setState para avisar ao React que o state mudou, atualizando a DOM
+    this.setState({ // Só devemos modificar o state a partir da função setState
+      date: new Date()
+    })
+  }
+
+  render() { // Método render retorna JSX
+    return (
+      <div>
+        <h1>It is {this.state.date.toLocaleDateString()}</h1>
+      </div>
+    )
+  }
+}
+
+// Obs.:
+// 1. NUNCA ATUALIZAR STATE DIRETAMENTE! Sempre usar setState!
+// 2. this.props e this.state podem ser atualizados de forma assíncrona, então
+// nunca devemos confiar nos seus valores atuais para calcular os próximos.
+// Em vez disso, passe uma função em setState que recebe um snapshot state e props
+// e assim retorne o novo objeto state.
+// Exemplo: this.setState((state, props) => ({counter: state.counter + props.increment}))
+// 3. Atualizações do state são mescladas! React pegará o objeto inicial e final e mesclará,
+// substituindo os valores com mesma chave e adicionando novos pares chave-valor.
+// 4. Dados fluem pra baixo! state é encapsulado em seu componente e só pode
+// ser passado como props para seus filhos.
