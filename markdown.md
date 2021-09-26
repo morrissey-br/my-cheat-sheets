@@ -21,6 +21,8 @@
 
 ## Emojis
 
+❤️
+
 :joy:
 
 ## Links
