@@ -1,12 +1,16 @@
-// Comentário de linha
+# Javascript
 
+## Comentário de linha
+
+```javascript
 /*
   Bloco
   de
   Comentário
 */
+```
 
-/* Variáveis em JS */
+## Variáveis em JS
 
 // JS é case-sensitive
 // lowerCamelCase para variáveis
