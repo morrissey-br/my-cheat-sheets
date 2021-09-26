@@ -19,6 +19,10 @@
 
 ~~linha no texto~~
 
+## Emojis
+
+:joy:
+
 ## Links
 
 [Com âncora](www.google.com)
