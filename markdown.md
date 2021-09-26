@@ -22,6 +22,7 @@
 ## Links
 
 [Com âncora](www.google.com)
+
 <www.google.com>
 
 ## Link para título
@@ -87,4 +88,12 @@ x = 10
 
 Obs.: Use auto formatar para organizar melhor.
 
+## Nota de rodapé
+Texto tem uma nota[^1] e também uma nota importante[^nota].
+
+[^1]: Minha primeira nota
+
+[^nota]: Minha segunda nota
+  Com indentação pra incluir ela na nota
+  `// Aqui posso colocar outras marcações também`
 
